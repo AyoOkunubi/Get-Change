@@ -17,11 +17,12 @@ const AddProductModal = ({ show, handleClose, handleAddProduct, productData, isU
     // Populate form when updating
     useEffect(() => {
         if (isUpdate && productData) {
-            setFormData(productData);
+          setFormData({ ...initialFormData, ...productData });
         } else {
-            setFormData(initialFormData);
+          setFormData(initialFormData);
         }
-    }, [productData, isUpdate, show]);
+      }, [initialFormData, productData, isUpdate, show]);
+      
 
     // Handle form input changes
     const handleChange = (e) => {
