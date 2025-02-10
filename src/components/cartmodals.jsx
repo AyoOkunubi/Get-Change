@@ -13,12 +13,13 @@ const AddCartModal = ({ show, handleClose, handleAddCart, cartData, isUpdate = f
     const [error, setError] = useState('');
 
     useEffect(() => {
-        if (isUpdate && cartData) {
+        if (isUpdate && cartData && JSON.stringify(cartData) !== JSON.stringify(formData)) {
             setFormData({ ...initialFormData, ...cartData });
         } else {
             setFormData(initialFormData);
         }
-    }, [initialFormData, cartData, isUpdate, show]);
+    }, [isUpdate, show, initialFormData]); 
+    
     
 
     const handleChange = (e) => {
@@ -28,7 +29,6 @@ const AddCartModal = ({ show, handleClose, handleAddCart, cartData, isUpdate = f
             const [key, index] = name.split(".");
             const parsedIndex = parseInt(index, 10);
     
-            // Ensure we're creating a new copy of the products array and the specific product object
             const updatedProducts = formData.products.map((product, i) =>
                 i === parsedIndex ? { ...product, [key]: value } : product
             );
