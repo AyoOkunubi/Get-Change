@@ -30,7 +30,7 @@ const User = () => {
                 console.log(users);
             })  
             .catch(error=> console.log(error))  
-    }, []);
+    }, [users]);
     
     const handleAddClose = () => setShowAddModal(false);
 
