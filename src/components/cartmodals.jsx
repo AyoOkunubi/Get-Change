@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Modal, Form } from 'react-bootstrap';
 import Button from './button';
 
+const initialFormData = {
+    userId: '',
+    date: '',
+    products: [{ productId: '', quantity: '' }]
+};
+
 const AddCartModal = ({ show, handleClose, handleAddCart, cartData, isUpdate = false }) => {
-    const initialFormData = {
-        userId: '',
-        date: '',
-        products: [{ productId: '', quantity: '' }]
-    };
+    
 
     const [formData, setFormData] = useState(initialFormData);
     const [error, setError] = useState('');
