@@ -14,12 +14,15 @@ const AddCartModal = ({ show, handleClose, handleAddCart, cartData, isUpdate = f
 
     useEffect(() => {
         if (isUpdate && cartData) {
-          setFormData({ ...initialFormData, ...cartData });
+            setFormData({ 
+                userId: cartData.userId || '', 
+                date: cartData.date || '', 
+                products: cartData.products.length ? cartData.products : [{ productId: '', quantity: '' }]
+            });
         } else {
-          setFormData(initialFormData);
+            setFormData(initialFormData);
         }
-      }, [initialFormData, cartData, isUpdate, show]);
-      
+    }, [cartData, isUpdate, show]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;

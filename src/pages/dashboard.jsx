@@ -9,7 +9,7 @@ const Dashboard = () => {
     <>
     <nav className="navbar navbar-light bg-white shadow-sm">
         <div className="container-fluid">
-            <a className="navbar-brand" >
+            <a className="navbar-brand" href="#">
                 <img src='/img/Bitmap.png' alt="Getchange logo" height="50" />
             </a>
             <div className="btn-container">

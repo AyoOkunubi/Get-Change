@@ -1,4 +1,3 @@
-
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 export const fetchCarts = createAsyncThunk('cart/fetchCarts', async () => {
