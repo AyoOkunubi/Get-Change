@@ -7,9 +7,9 @@ const Navbar = ({children}) => {
     <>
     <nav className="navbar navbar-light bg-white shadow-sm">
         <div className="container-fluid">
-            <NavLink to={'/'}><img className="navbar-brand" src='/img/Bitmap.png'  height="50" /></NavLink>
+            <NavLink to={'/'}><img className="navbar-brand" alt='' src='/img/Bitmap.png'  height="50" /></NavLink>
             <div className="user-info dropdown">
-                <img src="/img/Ellipse5.png"  width={30} height={30}/>
+                <img src="/img/Ellipse5.png" alt='' width={30} height={30}/>
                 <Button extra={"dropdown-toggle"} data-bs-toggle="dropdown" aria-expanded="false">Hi, Joshua</Button>
                 <ul className="dropdown-menu">
                     <li><NavLink className="dropdown-item" to={"/signin"}>Sign In</NavLink></li>

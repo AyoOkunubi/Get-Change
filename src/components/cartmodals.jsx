@@ -18,7 +18,7 @@ const AddCartModal = ({ show, handleClose, handleAddCart, cartData, isUpdate = f
         } else {
             setFormData(initialFormData);
         }
-    }, [isUpdate, show, initialFormData]); 
+    }, [isUpdate, show, initialFormData,cartData,formData]); 
     
     
 
