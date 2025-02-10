@@ -2,14 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { Modal, Form } from 'react-bootstrap';
 import Button from './button';
 
+const initialFormData = {
+    title: '',
+    price: '',
+    description: '',
+    image: '',
+    category: ''
+};
+
 const AddProductModal = ({ show, handleClose, handleAddProduct, productData, isUpdate = false }) => {
-    const initialFormData = {
-        title: '',
-        price: '',
-        description: '',
-        image: '',
-        category: ''
-    };
+    
 
     const [formData, setFormData] = useState(initialFormData);
     const [error, setError] = useState('');
@@ -21,7 +23,7 @@ const AddProductModal = ({ show, handleClose, handleAddProduct, productData, isU
         } else {
             setFormData(initialFormData);
         }
-    }, [initialFormData, productData, isUpdate, show]);
+    }, [productData, isUpdate, show]);
     
 
     // Handle form input changes
